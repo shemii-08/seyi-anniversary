@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Anniversary ♡</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- FLOATING HEARTS -->
+    <div id="hearts-container"></div>
+
+    <!-- WELCOME SCREEN -->
+    <div id="welcome-screen">
+      <div class="welcome-card">
+        <div class="welcome-heart">♡</div>
+        <h1>Welcome to Our Little World</h1>
+        <p>A little place made with love, just for you.</p>
+        <p class="pin-instruction">Enter our secret 4-digit PIN ♡</p>
+
+        <div class="pin-dots" id="pin-dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+        <input type="password" id="secret-password" hidden />
+
+        <div class="pin-keypad">
+          <button onclick="addPinDigit('1')">1</button>
+          <button onclick="addPinDigit('2')">2</button>
+          <button onclick="addPinDigit('3')">3</button>
+          <button onclick="addPinDigit('4')">4</button>
+          <button onclick="addPinDigit('5')">5</button>
+          <button onclick="addPinDigit('6')">6</button>
+          <button onclick="addPinDigit('7')">7</button>
+          <button onclick="addPinDigit('8')">8</button>
+          <button onclick="addPinDigit('9')">9</button>
+          <button onclick="clearPin()">C</button>
+          <button onclick="addPinDigit('0')">0</button>
+          <button onclick="deletePinDigit()">⌫</button>
+        </div>
+
+        <button class="unlock-button" onclick="enterWebsite()">
+          Unlock my heart ♡
+        </button>
+
+        <p id="password-message"></p>
+      </div>
+    </div>
+
+    <!-- MAIN WEBSITE -->
+    <div id="main-content">
+      <!-- NAVIGATION -->
+      <nav>
+        <div class="logo">Our Love ♡</div>
+
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#story">Our Story</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#reasons">Reasons</a>
+          <a href="#quiz">Quiz</a>
+          <a href="#bucket-list">Bucket List</a>
+          <a href="#letter">My Letter</a>
+        </div>
+      </nav>
+
+      <!-- MUSIC PLAYER -->
+      <div class="music-player">
+        <button id="music-button" onclick="toggleMusic()">
+          ♫ Play our song
+        </button>
+        <p>Our little soundtrack ♡</p>
+      </div>
+
+      <audio id="our-song" loop>
+        <source src="music/song.mp3" type="audio/mpeg" />
+      </audio>
+
+      <!-- HOME -->
+      <section id="home" class="hero">
+        <p class="small-heading">A little something for my favourite person</p>
+        <h1>Happy Anniversary, My Love ♡</h1>
+        <p class="hero-text">
+          Every love story is beautiful, but ours is my favourite.
+        </p>
+        <div class="hero-heart">♥</div>
+        <a href="#story" class="main-button">Explore our memories</a>
+      </section>
+
+      <!-- OUR STORY -->
+      <section id="story" class="section">
+        <p class="small-heading">The beginning of us</p>
+        <h2>Our Little Story ♡</h2>
+
+        <div class="timeline">
+          <div class="timeline-card">
+            <div class="timeline-icon">♡</div>
+            <h3>How We Met</h3>
+            <p>
+              On our way to LT, a mutual friend introduced us and we didn't give
+              a shit about each other ♡
+            </p>
+          </div>
+
+          <div class="timeline-card">
+            <div class="timeline-icon">♡</div>
+            <h3>Our First Memories</h3>
+            <p>
+              How we thought we had so much differences that we had to have a
+              conversation at CMSS to get to know each other better ♡
+            </p>
+          </div>
+
+          <div class="timeline-card">
+            <div class="timeline-icon">♡</div>
+            <h3>Where We Are Now</h3>
+            <p>
+              Still making memories, still learning, still growing and still
+              choosing each other ♡
+            </p>
+          </div>
+
+          <div class="timeline-card">
+            <div class="timeline-icon">♡</div>
+            <h3>Our Future</h3>
+            <p>
+              i hope we get to be together and achieve our goals together and
+              also get to live the moments we've imagined togethher especially
+              going on vacations and completing our bucket list together baby ♡
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section id="gallery" class="section gallery-section">
+        <p class="small-heading">Little moments, big memories</p>
+        <h2>Our Photo Gallery 📸</h2>
+        <p>Click on a picture to flip it over ♡</p>
+
+        <div class="gallery">
+          <div class="polaroid" onclick="flipCard(this)">
+            <div class="polaroid-inner">
+              <div class="polaroid-front">
+                <img src="images/photo1.jpg" alt="Our first memory" />
+                <p>Our favourite memory ♡</p>
+              </div>
+              <div class="polaroid-back">
+                <p>A moment I wish I could relive a thousand times.</p>
+                <span>♡</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="polaroid" onclick="flipCard(this)">
+            <div class="polaroid-inner">
+              <div class="polaroid-front">
+                <img src="images/photo2.jpg" alt="Another memory" />
+                <p>My favourite person</p>
+              </div>
+              <div class="polaroid-back">
+                <p>My smile has a lot to do with you. ♡</p>
+                <span>♡</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="polaroid" onclick="flipCard(this)">
+            <div class="polaroid-inner">
+              <div class="polaroid-front">
+                <img src="images/photo3.jpg" alt="Another special memory" />
+                <p>Us, always ♡</p>
+              </div>
+              <div class="polaroid-back">
+                <p>Here's to many more memories together.</p>
+                <span>♡</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REASONS -->
+      <section id="reasons" class="section">
+        <p class="small-heading">A million little reasons</p>
+        <h2>Reasons Why I Love You ♡</h2>
+
+        <p>Click the heart to discover a reason.</p>
+
+        <button class="big-click-heart" onclick="showReason()">♥</button>
+
+        <p id="reason-display">Click me, my love!</p>
+      </section>
+
+      <!-- QUIZ -->
+      <section id="quiz" class="section quiz-section">
+        <p class="small-heading">Let's see how well you know us</p>
+        <h2>A Little Love Quiz 💗</h2>
+
+        <div class="quiz-card">
+          <h3 id="quiz-question">Question goes here</h3>
+          <div id="quiz-options"></div>
+          <p id="quiz-feedback"></p>
+          <button class="main-button" onclick="nextQuestion()">
+            Next Question
+          </button>
+        </div>
+      </section>
+
+      <!-- BUCKET LIST -->
+      <section id="bucket-list" class="section">
+        <p class="small-heading">Things we still have to do</p>
+        <h2>Our Little Bucket List ♡</h2>
+
+        <div class="bucket-card">
+          <label><input type="checkbox" /> Go on a romantic date.</label>
+          <label
+            ><input type="checkbox" /> Watch a horror movie together.</label
+          >
+          <label><input type="checkbox" /> Travel to beautiful places.</label>
+          <label><input type="checkbox" /> Take more pictures together.</label>
+          <label><input type="checkbox" /> Try something new together.</label>
+          <label><input type="checkbox" /> Make unforgettable memories.</label>
+          <label><input type="checkbox" /> Keep choosing each other.</label>
+        </div>
+      </section>
+
+      <!-- LOVE LETTER -->
+      <section id="letter" class="section letter-section">
+        <p class="small-heading">Something from my heart</p>
+        <h2>A Letter For You 💌</h2>
+
+        <div class="envelope">
+          <div class="envelope-heart">♡</div>
+          <p>I have something to tell you...</p>
+
+          <button class="main-button" onclick="openLetter()">
+            Open my letter
+          </button>
+
+          <div id="love-letter">
+            <h3>To My Love,</h3>
+
+            <p>
+              Happy Anniversary my baby i love you so so much and would keep on
+              choosing you my baby.im so happy i get to be your girlfriend and
+              you get to be my boyfriend .OKO MI i will alwasy love you and i
+              cant belive it has been 365 days since i became yours and you
+              became mine .i just want you to know i love you for you and i will
+              always cherish you my sweetheart i hope we get to explore more
+              together and experienced all we've dreamed about.I love that i
+              feel like your princess and you make my heart so happy it's
+              changed alot about me .i love you my nafirah and i hope you get to
+              always cherish this day.Happy Anniversary my
+              sweetheart.KWISKWISKWIS ♡
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL SURPRISE -->
+      <section class="final-section">
+        <h2>One Last Surprise ♡</h2>
+        <p>Because you deserve to be reminded how special you are.</p>
+
+        <button class="main-button" onclick="finalSurprise()">
+          Click for a surprise
+        </button>
+
+        <p id="final-message"></p>
+      </section>
+
+      <footer>
+        <p>Made with all my love ♡</p>
+        <p>Forever and always.</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
